@@ -1,0 +1,116 @@
+<div class="p-h-md p-v bg-white box-shadow pos-rlt">
+  <h3 class="no-margin">Tabs</h3>
+</div>
+<div class="p-md" ng-controller="TabDemoCtrl">
+
+  <p>Add quick, dynamic tab functionality to transition through panes of local content.</p>
+
+  <pre class="bs-example-scope">$scope.tabs = {{tabs | json}};
+$scope.tabs.activeTab = {{ tabs.activeTab }};
+  </pre>
+  <div class="bs-example" append-source>
+    <!-- ngModel is optional -->
+    <div ng-model="tabs.activeTab" bs-tabs class="tab-container">
+      <div ng-repeat="tab in tabs" title="{{ tab.title }}" ng-bind="tab.content" bs-pane></div>
+    </div>
+  </div>
+  <div class="bs-example" style="padding-bottom: 24px;" append-source>
+    <!-- control a tab with ngModel -->
+    <div class="btn-group" ng-model="tabs.activeTab" bs-radio-group>
+      <label class="btn btn-default" ng-repeat="tab in tabs">
+        <input type="radio" class="btn btn-default" value="{{ $index }}">Tab n°{{ $index + 1 }}
+      </label>
+    </div>
+    <div class="btn btn-default" ng-click="pushTab()">Add new tab</div>
+  </div>
+
+  <h2 id="tabs-usage">Usage</h2>
+  <p>Append a <code>bs-tabs</code> attribute to any element and several children <code>bs-pane</code> attributes to children elements to enable the directive.</p>
+
+  <div class="callout callout-info">
+    <h4>Custom animations</h4>
+    <p>Pane animation is done with the <code>active</code> class and requires custom CSS.</p>
+    <pre class="bs-exemple-code">
+      <code class="css" highlight-block>
+.tab-pane.am-fade {
+  animation-duration: .3s;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+  opacity: 1;
+
+  &.active-remove {
+    display: none !important;
+  }
+  &.active-add {
+    animation-name: fadeIn;
+  }
+}
+      </code>
+    </pre>
+  </div>
+
+  <h3>Options</h3>
+  <p>Options can be passed via data attributes or as an <a href="http://docs.angularjs.org/guide/expression">AngularJS expression</a> to evaluate as an object on
+    <code>bs-tabs</code>. For data attributes, append the option name to <code>data-</code>, as in <code>data-animation=""</code>.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width: 100px;">Name</th>
+          <th style="width: 100px;">type</th>
+          <th style="width: 50px;">default</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>animation</td>
+          <td>string</td>
+          <td>am-fade</td>
+          <td>apply a CSS animation to the popover with <code>ngAnimate</code></td>
+        </tr>
+        <tr>
+          <td>template</td>
+          <td>path</td>
+          <td>false</td>
+          <td>
+            <p>If a remote URL is provided, overrides the default template</p>
+          </td>
+        </tr>
+        <tr>
+          <td>navClass</td>
+          <td>string</td>
+          <td>nav-tabs</td>
+          <td>
+            <p>Classes to be applied to the tab navigation (bootstrap supports <code>nav-pills</code>, <code>nav-stacked</code>)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>activeClass</td>
+          <td>string</td>
+          <td>active</td>
+          <td>
+            <p>Class to be applied to the animated element</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout callout-info">
+    <h4>Default options</h4>
+    <p>You can override global defaults for the plugin with <code>$tabProvider.defaults</code></p>
+    <div class="highlight">
+      <pre class="bs-exemple-code">
+        <code class="javascript" highlight-block>
+          angular.module('myApp')
+          .config(function($tabProvider) {
+            angular.extend($tabProvider.defaults, {
+              animation: 'am-flip-x'
+            });
+          })
+        </code>
+      </pre>
+    </div>
+  </div>
+
+</div>

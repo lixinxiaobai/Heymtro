@@ -1,0 +1,126 @@
+<div class="p-h-md p-v bg-white box-shadow pos-rlt">
+  <h3 class="no-margin">Buttons</h3>
+</div>
+<div class="p-md">
+  <div class="row">
+    <div class="col-sm-6">
+      <h5 class="no-margin m-b font-bold">Colors</h5>
+      <p class="m-b btn-groups">
+        <button class="btn w-xs btn-default">Default</button>
+        <button class="btn w-xs btn-primary">Primary</button>
+        <button class="btn w-xs btn-info">Info</button>
+        <button class="btn w-xs btn-success">Success</button>
+        <button class="btn w-xs btn-warning">Warning</button>
+        <button class="btn w-xs btn-danger">Danger</button>
+        <button class="btn w-xs btn-dark">Dark</button>
+        <button class="btn w-xs btn-black">Black</button>
+        <button class="btn w-xs btn-light">Light</button>
+      </p>
+      <h5 class="no-margin m-b font-bold">Size</h5>
+      <p class="m-b">
+        <button class="btn btn-xs btn-default">btn-xs</button>
+        <button class="btn btn-sm btn-default">btn-sm</button>
+        <button class="btn btn-default">btn</button>
+        <button class="btn btn-lg btn-default">btn-lg</button>
+      </p>
+      <h5 class="no-margin m-b font-bold">Rounded</h5>
+      <p class="m-b">
+        <button class="btn btn-rounded btn-default">btn-rounded</button>
+        <button class="btn btn-rounded btn-default p-h-md">More padding</button>
+      </p>
+      <h5 class="no-margin m-b font-bold">Stroke</h5>
+      <p class="btn-groups">
+        <button class="btn btn-rounded btn-stroke btn-primary">btn-stroke</button>
+        <button class="btn btn-rounded btn-stroke btn-info">btn-info</button>
+        <button class="btn btn-rounded btn-stroke btn-success">btn-success</button>
+        <button class="btn btn-rounded btn-stroke btn-warning">btn-warning</button>
+        <button class="btn btn-rounded btn-stroke btn-danger">btn-danger</button>
+        <button class="btn btn-rounded btn-stroke btn-dark">btn-dark</button>
+        <button class="btn btn-rounded btn-stroke btn-primary b-2x">b-2x</button>
+        <button class="btn btn-rounded btn-stroke btn-info no-border">no-border</button>
+      </p>
+      <h5 class="no-margin m-b font-bold">Addon</h5>
+      <p class="m-b btn-groups">
+        <button class="btn btn-addon btn-primary"><i class="fa fa-plus"></i>btn-addon</button>        
+        <button class="btn btn-addon btn-default"><i class="fa fa-cloud-upload"></i>Upload</button>
+        <br>
+        <button class="btn btn-sm btn-addon btn-info"><i class="fa fa-cloud-download"></i>Download</button>
+        <button class="btn btn-lg btn-addon btn-default"><i class="fa fa-play"></i>Play</button>
+      </p>
+      <h5 class="no-margin m-b font-bold">Icon</h5>
+      <p class="m-b">
+        <button class="btn btn-icon btn-default"><i class="fa fa-plus"></i></button>
+        <button class="btn btn-icon btn-rounded btn-info"><i class="fa fa-twitter"></i></button>
+        <button class="btn btn-icon btn-rounded btn-danger"><i class="fa fa-google-plus"></i></button>
+      </p>
+    </div>
+    <div class="col-sm-6">
+      <h5 class="no-margin m-b font-bold">Groups</h5>
+      <div class="btn-group m-b">
+        <button type="button" class="btn btn-stroke btn-info">Left</button>
+        <button type="button" class="btn btn-stroke btn-info">Middle</button>
+        <button type="button" class="btn btn-stroke btn-info">Right</button>
+      </div>
+      <p>Vertical</p>
+      <div class="btn-group-vertical m-b">
+        <button type="button" class="btn btn-default">Top</button>
+        <button type="button" class="btn btn-default">Middle</button>
+        <button type="button" class="btn btn-default">Bottom</button>
+      </div>
+      <p>Nested</p>
+      <script type="text/ng-template" id="dropdown">
+        <ul class="dropdown-menu">
+          <li><a href>Action</a></li>
+          <li><a href>Another action</a></li>
+          <li><a href>More</a></li>
+        </ul>
+      </script>
+      <div class="btn-group m-b">
+        <button type="button" class="btn btn-default">1</button>
+        <button type="button" class="btn btn-info">2</button>
+        <button type="button" class="btn btn-default">3</button>
+        <div class="btn-group dropdown">
+          <button type="button" class="btn btn-default" bs-dropdown="dropdown" data-animation="am-fade-and-slide-top" data-template="dropdown">
+            Dropdown <span class="caret"></span>
+          </button>          
+        </div>
+      </div>
+      <p>Justified</p>
+      <div class="btn-group btn-group-justified m-b">
+        <a href class="btn btn-rounded btn-stroke btn-primary">Left</a>
+        <a href class="btn btn-rounded btn-stroke btn-primary">Middle</a>
+        <a href class="btn btn-rounded btn-stroke btn-primary">Right</a>
+      </div>
+      <p>Multiple</p>
+      <div class="btn-toolbar m-b">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">1</button>
+          <button type="button" class="btn btn-default">2</button>
+          <button type="button" class="btn btn-default active">3</button>
+          <button type="button" class="btn btn-default">4</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">5</button>
+          <button type="button" class="btn btn-default">6</button>
+          <button type="button" class="btn btn-default">7</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">8</button>
+        </div>
+      </div>
+      <h5 class="no-margin m-b font-bold">App</h5>
+      <div class="btn-groups">
+        <a href class="text-sm btn btn-lg btn-rounded btn-stroke btn-info m-r">
+          <i class="fa fa-apple fa-3x pull-left"></i>
+          <span class="block clear text-left m-v-xs">Available on the <b class="text-lg block font-bold">App Store</b>
+          </span>
+        </a>
+        <a href class="text-sm btn btn-lg btn-rounded btn-stroke btn-success">
+          <i class="fa fa-android fa-3x pull-left"></i>
+          <span class="block clear text-left m-v-xs">Get it on <b class="text-lg block font-bold">Google Play</b>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

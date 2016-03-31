@@ -1,0 +1,147 @@
+<div class="p-h-md p-v bg-white box-shadow pos-rlt">
+  <h3 class="no-margin">Vector Maps</h3>
+</div>
+<div class="p-md">
+  <div class="box b-a bg-white m-b">
+    <div class="col-md-9">
+      <div class="panel-heading b-b b-light">World Map</div>
+      <div class="panel-body">
+        <p class="m-b-lg text-muted">Many maps of the world, world regions, countries and cities are available for download from <a href="http://jvectormap.com/">http://jvectormap.com/</a>. All of them are made from the data in public domain or data licensed under the free licenses, so you can use them for any purpose without of charge.</p>
+        <div class="m-b-lg" style="height:240px;" ui-jp="vectorMap" ui-options="{
+          map: 'world_mill_en',
+          markers: {{world_markers}},
+          normalizeFunction: 'polynomial',
+          backgroundColor: '#fff',
+          regionsSelectable: true,
+          markersSelectable: true,
+          regionStyle: {
+            initial: {
+              fill: '{{app.color.light}}'
+            },
+            hover: {
+              fill: '{{app.color.info}}',
+              stroke: '#fff'
+            },
+          },
+          markerStyle: {
+            initial: {
+              fill: '{{app.color.info}}',
+              stroke: '#fff'
+            },
+            hover: {
+              fill: '{{app.color.primary}}',
+              stroke: '#fff'
+            }
+          },
+          series: {
+            markers: [{
+              attribute: 'fill',
+              scale: ['{{app.color.primary}}','{{app.color.warning}}', '{{app.color.success}}'],
+              values: {{cityAreaData}}
+            },{
+              attribute: 'r',
+              scale: [5, 20],
+              values: {{cityAreaData}}
+            }]
+          }
+        }" >
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 b-l no-border-sm">
+      <div class="panel-heading b-b b-light">Infomation</div>
+      <div class="list-group no-border no-radius">
+        <div class="list-group-item">
+          <span class="pull-right">293,200</span>
+          <i class="fa fa-fw fa-circle text-danger"></i>
+          Vatican City
+        </div>
+        <div class="list-group-item">
+          <span class="pull-right">203,000</span>
+          <i class="fa fa-fw fa-circle text-warning"></i>
+          San Marino
+        </div>
+        <div class="list-group-item">
+          <span class="pull-right">180,230</span>
+          <i class="fa fa-fw fa-circle text-success"></i>
+          Marshall Islands
+        </div>
+        <div class="list-group-item">
+          <span class="pull-right">130,100</span>
+          <i class="fa fa-fw fa-circle text-info"></i>
+          Maldives
+        </div>
+        <div class="list-group-item">
+          <span class="pull-right">98,000</span>
+          <i class="fa fa-fw fa-circle text-primary"></i>
+          Palau
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="box b-a bg-white m-b">
+    <div class="col-md-9">
+      <div class="panel-heading b-b b-light">USA Map</div>
+      <div class="panel-body">
+        <p class="m-b-lg text-muted">For identification of the countries and regions ISO 3166 standard is used. So you easily visualize data which is compliant with this standard.</p>                   
+        <div class="m-b-lg" style="height:240px;" ui-jp="vectorMap" ui-options="{
+          map: 'us_aea_en',
+          markers: {{usa_markers}},
+          backgroundColor: '#fff',
+          regionsSelectable: true,
+          markersSelectable: true,
+          regionStyle: {
+            initial: {
+              fill: '{{app.color.info}}'
+            },
+            selected: {
+              fill: '{{app.color.info}}'
+            }
+          },
+          series: {
+            markers: [{
+              attribute: 'fill',
+              scale: ['{{app.color.primary}}','{{app.color.warning}}', '{{app.color.success}}'],
+              values: {{cityAreaData}}
+            },{
+              attribute: 'r',
+              scale: [5, 20],
+              values: {{cityAreaData}}
+            }]
+          }
+        }" >
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 b-l no-border-sm">
+      <div class="p-md">
+        <div class="text-muted">Total steps taken</div>
+        <div class="h3 m-b-lg font-bold">234,344,450</div>
+        <div>
+          <div class="m-b">
+            <i class="fa text-3x pull-left fa-circle text-info-lt"></i>
+            <div class="clear">
+              <span>232,000</span>
+              <div class="h5 font-bold">Silicon Valley</div>
+            </div>
+          </div>
+          <div class="m-b">
+            <i class="fa text-3x pull-left fa-circle text-muted"></i>
+            <div class="clear">
+              <span>9,632,000</span>
+              <div class="h5 font-bold">Los Angeles</div>
+            </div>
+          </div>
+          <div class="m-b">
+            <i class="fa text-3x pull-left fa-circle text-muted-lt"></i>
+            <div class="clear">
+              <span>23,200,000</span>
+              <div class="h5 font-bold">Philadelphia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

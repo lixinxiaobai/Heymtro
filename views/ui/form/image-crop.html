@@ -1,0 +1,31 @@
+<div class="p-h-md p-v bg-white box-shadow pos-rlt">
+  <h3 class="no-margin">Image Crop</h3>
+</div>
+<div class="p-md">
+  <div class="m-b">
+    Select an image file
+    <input type="file" id="fileInput" />
+  </div>
+  <div class="b-a bg-white m-r-xs m-b-xs">
+    <div class="bg-light" style="height:256px">
+      <img-crop 
+        image="myImage" 
+        result-image="myCroppedImage"
+        result-image-size="128"
+        area-type="{{cropType}}"
+      ></img-crop>
+    </div>
+  </div>
+  <div class="b-a inline">
+    <div class="bg-light">
+      <img ng-src="{{myCroppedImage}}" />
+    </div>
+  </div>
+  <div class="block m-t">
+    <div class="btn-group" ng-model="cropType" bs-radio-group>
+      <label class="btn btn-default"><input type="radio" class="btn btn-default" value="circle"> Circle</label>
+      <label class="btn btn-default"><input type="radio" class="btn btn-default" value="square"> Square</label>
+    </div>
+  </div>
+
+<div>

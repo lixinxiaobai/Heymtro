@@ -1,0 +1,146 @@
+      <!-- navbar header -->
+      <div class="navbar-header" ng-class="{'box-shadow-inset dk':app.settings.headerShadow}">
+        <button class="pull-right visible-xs" ng-click="app.navbarCollapse = !app.navbarCollapse">
+          <i class="ti-settings"></i>
+        </button>
+        <button class="pull-right visible-xs" ng-click="app.asideCollapse = !app.asideCollapse">
+          <i class="ti-menu"></i>
+        </button>
+        <!-- brand -->
+        <a class="navbar-brand text-lt" 
+          bs-aside="aside" 
+          data-template="views/partials/aside.tpl.html" 
+          data-placement="top" 
+          data-animation="am-slide-top aside-open-backdrop"
+          data-container="body"
+          >
+          <i class="pull-right ti-arrow-circle-down text-sm m-v-xs m-l-xs"></i>
+          <i class="glyphicon glyphicon-th-large text-md"></i>
+          <img src="images/logo.png" alt="." class="hide">
+          <span class="hidden-folded m-l-xs">{{app.name}}<sup class="text-xs font-thin">{{app.version}}</sup></span>
+        </a>
+        <!-- / brand -->
+      </div>
+      <!-- / navbar header -->
+
+      <!-- navbar collapse -->
+      <div class="navbar-collapse hidden-xs" ng-class="{'show animated fadeIn' : app.navbarCollapse}">
+        <!-- nav -->
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a ui-sref="app.dashboard" translate="header.navbar.DASHBOARD">
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a ui-sref="mail.inbox" translate="header.navbar.EMAIL">
+              Email
+            </a>
+          </li>
+          <li>
+            <a ui-sref="ui.component.arrow" translate="header.navbar.UIKITS">
+              UI Kits
+            </a>
+          </li>
+          <li>
+            <a ui-sref="page.profile" translate="header.navbar.PAGES">
+              Pages
+            </a>
+          </li>
+        </ul>
+        <!-- / nav -->
+
+        <!-- nabar right -->
+        <ul class="nav navbar-nav navbar-right m-r-n">
+          <li>
+            <script type="text/ng-template" id="settings">
+              <div tabindex="-1" class="p dropdown-menu bg-white bg-inherit no-b-t no-margin w-sm" role="menu">                
+                <p class="clearfix">
+                  <a class="inline {{color}} p-xs m-h-xs m-v-xs pull-left no-borders" ng-repeat="color in options.headerColor" ng-click="setHeaderColor(color)">
+                  </a>
+                </p>
+                <div class="line b-b b-light m-h-xs"></div>
+                <p class="clearfix">
+                  <a class="inline {{color}} p-xs m-h-xs m-v-xs pull-left no-borders" ng-repeat="color in options.asideColor" ng-click="setAsideColor(color)">
+                  </a>
+                </p>
+                <div class="line b-b b-light m-h-xs"></div>                
+                <div class="m-v-xs">
+                  <label class="ui-checks m-h-xs no-margin">
+                    <input type="checkbox" ng-model="app.settings.headerFixed"><i></i> Header fixed
+                  </label>
+                </div>
+                <div class="m-v-xs">
+                  <label class="ui-checks m-h-xs no-margin">
+                    <input type="checkbox" ng-model="app.settings.headerShadow"><i></i> Header shadow
+                  </label>
+                </div>
+                <div class="m-v-xs">
+                  <label class="ui-checks m-h-xs no-margin">
+                    <input type="checkbox" ng-model="app.settings.asideTop"><i></i> Aside top
+                  </label>
+                </div>
+              </div>
+            </script>
+            <a href bs-dropdown="dropdown" data-animation="am-collapse" data-template="settings">
+              <i class="glyphicon glyphicon-cog"></i>
+              <span class="visible-xs-inline">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href 
+              bs-aside="aside" 
+              data-template="views/partials/aside.tpl.chat.html" 
+              data-placement="right" 
+              data-animation="am-slide-right aside-open-inner modal-open"
+              data-container="body"
+              >
+              <i class="glyphicon glyphicon-comment"></i>
+              <b class="badge badge-xs bg-warning up">3</b>
+              <span class="visible-xs-inline">Notifications</span>
+            </a>
+          </li>
+          <li class="hidden-xs">
+            <a href ui-fullscreen><i class="glyphicon glyphicon-resize-vertical"></i></a>
+          </li>
+          <li>            
+            <a href class="clear no-padding-h" bs-dropdown="dropdown" data-animation="am-collapse" data-template="user">
+              <img src="images/a0.jpg" alt="..." class="navbar-img pull-right">
+              <span class="hidden-sm m-l">David M.</span>
+              <b class="caret m-h-xs hidden-sm"></b>
+            </a>
+            <script type="text/ng-template" id="user">
+              <ul class="dropdown-menu pull-right no-b-t">
+                <li>
+                  <a ui-sref="page.profile">Profile</a>
+                </li>
+                <li>
+                  <a ui-sref="page.settings">Settings</a>
+                </li>
+                <li class="divider">
+                <li>
+                  <a ui-sref="lockme">Lock me</a>
+                </li>
+                <li>
+                  <a ui-sref="signin">Logout</a>
+                </li>
+              </ul>
+            </script>
+          </li>
+        </ul>
+        <!-- / navbar right -->
+
+        <!-- search form -->
+        <form class="navbar-form navbar-form-sm navbar-right visible-xs" role="search">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-sm no-bg btn-icon no-shadow no-padder"><i class="ti-search"></i></button>
+              </span>
+              <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm no-bg no-border" placeholder="Search...">              
+            </div>
+          </div>
+        </form>
+        <!-- / search form -->
+      </div>
+      <!-- / navbar collapse -->

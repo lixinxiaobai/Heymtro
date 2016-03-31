@@ -1,0 +1,162 @@
+<div class="app-content-inner">
+  <div class="box">
+    <div class="col-md-4">
+      <div class="box b-r">
+        <div class="p p-v-sm b-b">
+          <script type="text/ng-template" id="filter">
+            <ul tabindex="-1" class="dropdown-menu" role="menu">
+              <li><a >Read</a></li>
+              <li><a >Unread</a></li>
+            </ul>
+          </script>
+          <a href class="pull-right text-muted"><i class="fa fa-trash"></i></a>
+          <a href class="btn btn-default btn-xs text-muted" bs-dropdown="dropdown" data-animation="am-flip-x" data-template="filter">
+            Filter <span class="caret"></span>
+          </a>
+        </div>
+        <!-- use box row -->
+        <div class="box-row">
+          <div class="box-cell scrollable hover">
+            <div class="box-inner">
+              <!-- mail list -->
+              <div class="list-group list-group-md no-border no-radius no-margin">
+                <div class="list-group-item">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a0.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      12:30 PM
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>David M.</div>
+                    <a href class="text-md text-ellipsis">Easy Angular development with Yeoman</a>
+                  </div>
+                  <small class="text-muted">One of the best things to happen in web development over the past few years has been the variety of tools</small>
+                </div>
+                <div class="list-group-item select">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a1.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      10:34 PM 
+                      <i class="fa fa-paperclip m-l-sm"></i>
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>Eric Dane</div>
+                    <a href class="text-md text-ellipsis">This is a short and opinionated review of the AngularJS</a>
+                  </div>
+                  <small class="text-muted">AngularJS is what HTML would have been, designed for building web-apps.</small>
+                </div>
+                <div class="list-group-item">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a2.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      9:34 PM 
+                      <i class="fa fa-paperclip m-l-sm"></i>
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>Ryan Gosling</div>
+                    <a href class="text-md text-ellipsis">Correct the known issue</a>
+                  </div>
+                  <small class="text-muted">This is a known issue. Please set the correct node write permissions with sudo</small>
+                </div>
+                <div class="list-group-item">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a4.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      July 9
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>Richard Hammond</div>
+                    <a href class="text-md text-ellipsis">Angular bootstrap</a>
+                  </div>
+                  <small class="text-muted">Native AngularJS (Angular) directives for Bootstrap. Small footprint</small>
+                </div>
+                <div class="list-group-item">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a5.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      March 10
+                      <i class="fa fa-paperclip m-l-sm"></i>
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>Ossily</div>
+                    <a href class="text-md text-ellipsis">Building an Angular App: Bootstrapping</a>
+                  </div>
+                  <small class="text-muted">Using angular.bootstrap to Initialize Your App</small>
+                </div>
+                <div class="list-group-item">
+                  <a href class="w-thumb-md pull-left m-r"><img src="images/a6.jpg" class="img-responsive"></a>
+                  <div class="clear m-b-sm">
+                    <span class="pull-right text-muted text-xs">
+                      Feb 8
+                      <i class="fa fa-paperclip m-l-sm"></i>
+                      <label class="ui-checks m-l-sm"><input type="checkbox"><i></i></label>
+                    </span>
+                    <div>Patrick</div>
+                    <a href class="text-md text-ellipsis">AngularJS Documentation for bootstrap</a>
+                  </div>
+                  <small class="text-muted">Place ng-app to the root of your application</small>
+                </div>
+              </div>
+              <!-- / mail list -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="box">
+        <div class="p p-v-sm b-b">
+          <script type="text/ng-template" id="label">
+            <ul tabindex="-1" class="dropdown-menu" role="menu">
+              <li><a >Sent</a></li>
+              <li><a >Trash</a></li>
+              <li><a >Work</a></li>
+              <li><a >Project</a></li>
+            </ul>
+          </script>
+          <div class="btn-group pull-right">
+            <button type="button" class="btn btn-xs btn-default"><i class="fa fa-fw fa-angle-left"></i></button>
+            <button type="button" class="btn btn-xs btn-default"><i class="fa fa-fw fa-angle-right"></i></button>
+          </div>
+          <a href class="btn btn-default btn-xs text-muted" bs-dropdown="dropdown" data-animation="am-flip-x" data-template="label">
+            Label <span class="caret"></span>
+          </a>
+          <a href class="btn btn-default btn-xs text-muted">More <span class="caret"></span></a>
+        </div>
+        <div class="box-row">
+          <div class="box-cell">
+            <div class="box-inner">
+              <!-- mail detail -->
+              <div class="p b-b">
+                <h4 class="no-margin font-bold">This is a short and opinionated review of the AngularJS</h4>
+                <div class="m-t-sm">
+                  <div class="pull-right">Oct 14</div>
+                  <div class="w-thumb-sm pull-left m-r-sm"><img src="images/a1.jpg" class="img-responsive"></div>
+                  <div class="clear l-h-1x">
+                    <div><strong>Eric Dane</strong> &lt;eric.dane@gmail.com></div>
+                    <div>to me</div>
+                  </div>
+                </div>
+              </div>       
+              <div class="p-lg">                
+                <p>Hey David,</p>
+                <p class="text-lt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.</p>
+                <blockquote>
+                  <em>Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</em>
+                </blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
+                <p>Duis non malesuada est, quis congue nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <p>Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non malesuada est, quis congue nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <p>Consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. Phasellus at ultricies neque, quis malesuada augue. Donec eleifend</p>
+                <p>&nbsp;</p>
+                <p>Best Regards</p>
+              </div>
+              <!-- / mail detail -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

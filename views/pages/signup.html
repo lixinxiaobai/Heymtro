@@ -1,0 +1,30 @@
+<div class="container">  
+  <div class="center-block w-xl w-auto-xs m-b-lg">
+    <div class="text-2x m-v-lg text-primary"><i class="glyphicon glyphicon-th-large text-xl"></i> {{app.name}}</div>
+    <div class="m-b text-sm">
+      Sign up to your {{app.name}} Account
+    </div>
+    <form name="form">
+      <div class="form-group m-b-xs">
+        <label class="hide">Name</label>
+        <input type="text" placeholder="Your name" class="form-control" ng-model="user.name" required>
+      </div>
+      <div class="form-group m-b-xs">
+        <label class="hide">Email</label>
+        <input type="email" placeholder="Someone@example.com" class="form-control" ng-model="user.email" required>
+      </div>
+      <div class="form-group m-b-xs">
+        <label class="hide">Password</label>
+        <input type="password" placeholder="Password" class="form-control" ng-model="user.password" required>
+      </div>
+      <div class="checkbox no-margin">
+        <label class="ui-checks">
+          <input type="checkbox" ng-model="agree" required><i></i> Agree the <a href>terms and policy</a>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-info p-h-md m-v-lg">Sign up</button>
+      <p>Already have an account? <a ui-sref="signin">Sign in</a></p>
+    </form>
+  </div>
+</div>
+<div class="app-footer" ng-include="'views/footer.html'"></div>

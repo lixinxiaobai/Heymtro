@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HeyMetro | Responsive Web Admin App with AngularJS And Bootstrap</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="styles/app.min.css" type="text/css" />
+</head>
+
+<body ng-app="app">
+    <div class="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-top':app.settings.asideTop}" ui-view ng-controller="MainCtrl"></div>
+
+    <script src="scripts/app.min.js"></script>
+
+</body>
+
+</html>

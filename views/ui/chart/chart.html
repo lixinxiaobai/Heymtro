@@ -1,0 +1,333 @@
+<div class="p-h-md p-v bg-white box-shadow pos-rlt">
+  <h3 class="no-margin">Charts</h3>
+</div>
+<div class="p-md" ng-controller="ChartCtrl">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel no-border">
+        <div class="panel-heading">
+          <span class="text-xl font-bold">3.343.209</span> <i class="fa fa-caret-up text-success"></i>1.5%
+          <small class="block text-muted">Total revenue of this month</small>
+        </div>
+        <div style="margin: 0 -2px">
+          <div ui-jp="plot" ui-options="
+            [
+              { data: {{plot_line_1}}, points: { show: true, radius: 0}, splines: { show: true, tension: 0.45, lineWidth: 1, fill: 0.2 } },
+              { data: {{plot_line_2}}, points: { show: true, radius: 0}, splines: { show: true, tension: 0.45, lineWidth: 1, fill: 1 } }
+            ], 
+            {
+              colors: ['{{app.color.info}}', '{{app.color.dark}}'],
+              series: { shadowSize: 3 },
+              xaxis: { show: false, font: { color: '#ccc' }, position: 'bottom' },
+              yaxis:{ show: false, font: { color: '#ccc' }},
+              grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+              tooltip: true,
+              tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+            }
+          " style="height:170px" >
+          </div>
+        </div>
+        <div class="panel-footer bg-dark no-b-t">
+          <div class="box">
+            <div class="box-col p-md">
+              <span class="text-lg text-lt">$23,000</span>
+            </div>
+            <div class="box-col text-right p-md">
+              <div ui-jp="sparkline" ui-options="[60,40], {type:'pie', height:25, sliceColors:['{{app.color.success}}','#fff']}" class="sparkline inline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel no-border">
+        <div class="panel-heading">
+          <span class="font-bold">Lines and Bars</span>
+          <small class="block text-muted">Plenty of options to control</small>
+        </div>
+        <div class="panel-body">
+          <div ui-jp="plot" ui-options="
+            [
+              { data: {{plot_line_1}}, points: { show: true, radius: 3}, lines: { show: true, lineWidth: 1} },
+              { data: {{plot_line_2}}, bars: { show: true, barWidth: 0.4, lineWidth: 1, fillColor: { colors: [{ opacity: 0.2 }, { opacity: 0.4}] } } }
+            ], 
+            {
+              colors: ['{{app.color.primary}}', '{{app.color.info}}'],
+              series: { shadowSize: 3 },
+              xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
+              yaxis:{ show: true, font: { color: '#ccc' }},
+              grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+              tooltip: true,
+              tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+            }
+          " style="height:240px" >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel no-border">
+        <div class="panel-heading">
+          <span class="font-bold">Lines</span>
+          <small class="block text-muted">Simple usage</small>
+        </div>
+        <div class="panel-body">
+          <div ui-jp="plot" ui-options="
+            [
+              {
+                data: {{plot_line}}, 
+                points: { show: true, radius: 4, lineWidth: 3, fillColor: 'rgba(18,147,204,0.3)'}, 
+                lines:  { show: true, lineWidth: 0, fill: 0.5, fillColor: 'rgba(18,147,204,0.3)' }, 
+                color:'#fff'
+              }
+            ],
+            {
+              series: { shadowSize: 3 },
+              xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
+              yaxis:{ show: true, font: { color: '#ccc' }},
+              grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+              tooltip: true,
+              tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+            }
+          " style="height:240px" >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel no-border">
+        <div class="panel-heading">
+          <span class="font-bold">Bars</span>
+          <small class="block text-muted">Attractive looks</small>
+        </div>
+        <div class="panel-body">
+          <div ui-jp="plot" ui-options="
+            [
+              { data: {{plot_line}} },
+              { data: {{plot_line_2}} }
+            ], 
+            {
+              bars: { show: true, fill: true,  barWidth: 0.3, lineWidth: 1, fillColor: { colors: [{ opacity: 0.8 }, { opacity: 1}] } },
+              colors: ['{{app.color.info}}','{{app.color.success}}'],
+              series: { shadowSize: 3 },
+              xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
+              yaxis:{ show: true, font: { color: '#ccc' }},
+              grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+              tooltip: true,
+              tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+            }
+          " style="height:240px" >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel no-border">
+        <div class="panel-heading">
+          <span class="font-bold">Order Bars</span>
+          <small class="block text-muted">With orders</small>
+        </div>
+        <div class="panel-body">
+          <div ui-jp="plot" ui-options="
+            [
+              { data: {{plot_line}} },
+              { data: {{plot_line_2}} }
+            ], 
+            {
+              bars: { show: true, fill: true,  barWidth: 0.3, lineWidth: 1, order: 1, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.9}] } },
+              colors: ['{{app.color.primary}}','{{app.color.info}}'],
+              series: { shadowSize: 3 },
+              xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
+              yaxis:{ show: true, font: { color: '#ccc' }},
+              grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+              tooltip: true,
+              tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+            }
+          " style="height:240px" >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel no-border">
+        <div class="panel-heading">
+          <span class="font-bold">Pies</span>
+          <small class="block text-muted">Interactive features</small>
+        </div>
+        <div class="panel-body">
+          <div ui-jp="plot" ui-options="
+            {{plot_pie}},
+            {
+              series: { pie: { show: true, innerRadius: 0.6, stroke: { width: 3 }, label: { show: true, threshold: 0.05 } } },
+              colors: ['{{app.color.primary}}','{{app.color.info}}'],
+              grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },   
+              tooltip: true,
+              tooltipOpts: { content: '%s: %p.0%' }
+            }
+          " style="height:240px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel no-border">
+        <div class="panel-heading">
+          <span class="font-bold">Sparklines</span>
+          <small class="block text-muted">Small inline charts</small>
+        </div>
+        <div class="panel-body p-v-lg">
+          <span ui-jp="sparkline" ui-options="[70,30], {type:'pie', height:18, sliceColors:['{{app.color.info}}','#eaeeea']}" class="sparkline inline"></span>
+
+          <span ui-jp="sparkline" ui-options="[5,6,7,9,9,7,6,5,6,5,4,3,2,4,6,7], {type:'line', height:18, width: 'auto', lineWidth:1, valueSpots:{'0:':'{{app.color.info}}'}, lineColor:'{{app.color.info}}', spotColor:'{{app.color.info}}', fillColor:'', highlightLineColor:'#fff', spotRadius:0}"></span>
+
+          <span ui-jp="sparkline" ui-options="[1,1,0,1,-1,-1,1,-1,0,0,1,1], {type:'tristate', height:18, width: 'auto', type: 'tristate', colorMap: {'-1': '{{app.color.info}}', '1': '{{app.color.primary}}'}}"></span>
+
+          <span ui-jp="sparkline" ui-options="[10,9,11,10,11,10,12,10,9,10,11,9,8], {type:'bar', height:18, barWidth:4, barSpacing:2, barColor:'{{app.color.info}}'}">loading...</span>
+
+          <span ui-jp="sparkline" ui-options="[[2,8],[4,6],[6,4],[8,2],[10,0],[8,2],[6,4],[4,6],[2,8]], {type:'bar', height:18, barWidth:4, barSpacing:2, stackedBarColor:['{{app.color.success}}', '{{app.color.light}}']}"></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="panel no-border">
+        <div class="panel-heading">
+          <span class="font-bold">Easypiecharts</span>
+        </div>
+        <div class="panel-body">
+          <div class="inline">
+            <div ui-jp="easyPieChart" ui-options="{
+                percent: 75,
+                lineWidth: 3,
+                trackColor: '{{app.color.light}}',
+                barColor: '{{app.color.primary}}',
+                scaleColor: '{{app.color.light}}',
+                size: 60,
+                lineCap: 'butt'
+              }">
+              <div>
+                75%
+              </div>
+            </div>
+          </div>
+          <div class="inline">
+            <div ui-jp="easyPieChart" ui-options="{
+                percent: 45,
+                lineWidth: 2,
+                trackColor: '#fff',
+                barColor: '{{app.color.info}}',
+                scaleColor: '#fff',
+                size: 60,
+                lineCap: 'butt',
+                animate: 3000
+              }">
+              <div>
+                45%
+              </div>
+            </div>
+          </div>
+          <div class="inline">
+            <div ui-jp="easyPieChart" ui-options="{
+                percent: 50,
+                lineWidth: 1,
+                trackColor: '{{app.color.light}}',
+                barColor: '{{app.color.success}}',
+                scaleColor: '#fff',
+                size: 60,
+                lineCap: 'butt',
+                rotate: 90
+              }">
+              <div>
+                50%
+              </div>
+            </div>
+          </div>
+          <div class="inline">
+            <div ui-jp="easyPieChart" ui-options="{
+                percent: 20,
+                lineWidth: 5,
+                trackColor: '#fff',
+                barColor: '{{app.color.info}}',
+                scaleColor: '#fff',
+                size: 60,
+                lineCap: 'butt',
+                color: '{{app.color.light}}'
+              }">
+              <div>
+                20%
+              </div>
+            </div>
+          </div>
+          <div class="inline">
+            <div ui-jp="easyPieChart" ui-options="{
+                percent: 30,
+                lineWidth: 5,
+                trackColor: '{{app.color.light}}',
+                barColor: '{{app.color.primary}}',
+                scaleColor: '#fff',
+                size: 60,
+                lineCap: 'butt',
+                color: '{{app.color.info}}'
+              }">
+              <div class="text-white">
+                30%
+              </div>
+            </div>
+          </div>
+          <div class="inline">
+            <div ui-jp="easyPieChart" ui-options="{
+                percent:40,
+                lineWidth: 5,
+                trackColor: '{{app.color.light}}',
+                barColor: '{{app.color.success}}',
+                scaleColor: '#fff',
+                size: 60,
+                lineCap: 'butt',
+                color: '{{app.color.primary}}',
+                animate: 6000
+              }">
+              <div class="text-white">
+                40%
+              </div>
+            </div>
+          </div>
+          <div class="inline">
+            <div ui-jp="easyPieChart" ui-options="{
+                percent:80,
+                lineWidth: 5,
+                trackColor: '#fff',
+                barColor: '{{app.color.light}}',
+                scaleColor: '#fff',
+                size: 60,
+                lineCap: 'butt',
+                color: '{{app.color.success}}'
+              }">
+              <div class="text-white">
+                80%
+              </div>
+            </div>
+          </div>
+          <div class="inline">
+            <div ui-jp="easyPieChart" ui-options="{
+                percent: 32,
+                lineWidth: 25,
+                trackColor: '#fff',
+                barColor: '{{app.color.info}}',
+                scaleColor: '#fff',
+                size: 60,
+                lineCap: 'butt',
+                rotate: 30,
+                animate: 5000
+              }">
+              <div class="text-black">
+                32%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
